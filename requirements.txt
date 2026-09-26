@@ -1,0 +1,11 @@
+yfinance>=0.2.40
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=7
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+mplfinance>=0.12.10b0
+PyYAML>=6.0
+requests>=2.31
+pytest>=8

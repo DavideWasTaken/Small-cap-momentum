@@ -1,0 +1,16 @@
+data:
+  provider: yfinance
+  interval: 15m
+  period: 60d
+  prepost: true
+  timezone: America/New_York
+  regular_start: "09:30"
+  regular_end: "16:00"
+  cache_dir: data/raw
+  refresh: false
+
+output:
+  output_dir: outputs/clro_auto
+  save_trade_charts: true
+  chart_bars_before: 80
+  chart_bars_after: 24

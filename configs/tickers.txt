@@ -1,0 +1,31 @@
+# Manual liquid/momentum-oriented small/mid-cap research universe.
+# This is intentionally not presented as a historical Russell 2000 universe.
+CLRO
+ACHR
+AEMD
+APLD
+ATNF
+BBAI
+BURU
+CRKN
+GXAI
+HSDT
+JOBY
+KULR
+LASE
+LIDR
+MVIS
+NCPL
+NNE
+OKLO
+OPEN
+QBTS
+QUBT
+RCAT
+RGTI
+RR
+SERV
+SLS
+TMC
+TNXP
+UAMY

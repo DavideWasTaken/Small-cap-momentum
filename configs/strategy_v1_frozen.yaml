@@ -1,0 +1,60 @@
+data:
+  provider: alpaca
+  interval: 15m
+  period: 60d
+  prepost: true
+  timezone: America/New_York
+  regular_start: "09:30"
+  regular_end: "16:00"
+  cache_dir: data/raw
+  refresh: false
+  alpaca_feed: sip
+
+strategy:
+  spike_return_pct: 0.50
+  spike_volume_multiple: 5.0
+  volume_lookback_days: 20
+  min_volume_history_days: 5
+  spike_lookback_min_sessions: 1
+  spike_lookback_max_sessions: 5
+  consolidation_max_range_pct: 0.50
+  consolidation_min_low_vs_spike_high: 0.55
+  resistance_tests: 3
+  resistance_tolerance_pct: 0.05
+  resistance_top_quantile: 0.65
+  swing_window: 1
+  include_extended_setup: false
+  breakout_buffer_pct: 0.00
+  breakout_on_close: true
+  include_extended_breakout: true
+  trigger_start: "04:00"
+  trigger_end: "11:30"
+  pullback_regular_session_only: true
+  pullback_max_above_level_pct: 0.20
+  hold_tolerance_pct: 0.04
+  hold_bars: 2
+  require_hold_close_above_level: true
+  entry_execution: next_bar_open
+  max_entry_extension_pct: 0.20
+  one_trade_per_setup: true
+  level_overrides: {}
+
+risk:
+  stop_mode: pullback
+  stop_buffer_pct: 0.005
+  fixed_stop_pct: 0.10
+  target_pcts: [0.20, 0.25]
+  trailing_stop_pct: 0.15
+  exit_variants: [target_20, target_25, trailing, eod]
+  intrabar_priority: stop
+  slippage_bps_per_side: 10.0
+  commission_bps_per_side: 2.0
+  initial_capital: 100000
+  risk_per_trade: 0.01
+  max_position_pct: 0.25
+
+output:
+  output_dir: outputs/historical_alpaca
+  save_trade_charts: false
+  chart_bars_before: 60
+  chart_bars_after: 24

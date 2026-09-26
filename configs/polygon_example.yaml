@@ -1,0 +1,15 @@
+data:
+  provider: polygon
+  interval: 15m
+  prepost: true
+  timezone: America/New_York
+  regular_start: "09:30"
+  regular_end: "16:00"
+  cache_dir: data/raw
+  refresh: true
+
+output:
+  output_dir: outputs/polygon
+  save_trade_charts: true
+  chart_bars_before: 60
+  chart_bars_after: 24

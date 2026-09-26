@@ -1,0 +1,38 @@
+strategy:
+  formation_return: "t-12_to_t-2"
+  rebalance_frequency: monthly
+  weighting: value_weighted
+  primary_portfolio: ff_2x3_small_high
+  sensitivity_portfolio: ff_5x5_smallest_high
+
+comparison:
+  start_month: "2013-05-31"
+  end_month: "2026-05-31"
+  momentum_etf: MTUM
+  small_cap_etf: IWM
+  direct_small_cap_momentum_etf: XSMO
+  direct_benchmark_start_month: "2019-07-31"
+  monthly_cost_bps: [0, 25, 50, 100]
+  full_year_start: 2014
+  full_year_end: 2025
+  direct_benchmark_full_year_start: 2020
+  direct_benchmark_full_year_end: 2025
+
+bootstrap:
+  samples: 20000
+  block_months: 12
+  seed: 20260712
+
+implementation_costs:
+  annual_one_way_turnover:
+    xsmo_reported: 1.15
+    moderate_proxy: 2.00
+    academic_monthly_proxy: 3.05
+    high_stress: 4.00
+  all_in_cost_bps_per_side: [5, 10, 25, 50, 75, 100]
+  retail_market_cost_bps_per_side: 25
+  capital_usd: [10000, 25000, 50000, 100000, 250000]
+  orders_per_month: [60, 120]
+  ibkr_minimum_per_order_usd:
+    tiered: 0.35
+    fixed: 1.00

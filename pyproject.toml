@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smallcap-momentum-backtest"
+version = "0.1.0"
+description = "Causal 15-minute backtest for small-cap momentum continuation setups"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib>=3.8",
+  "mplfinance>=0.12.10b0",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "PyYAML>=6.0",
+  "requests>=2.31",
+  "yfinance>=0.2.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+analysis = ["ipykernel>=7", "nbclient>=0.10", "nbformat>=5.10"]
+
+[project.scripts]
+smallcap-bt = "smallcap_bt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests"]
