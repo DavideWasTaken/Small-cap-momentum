@@ -8,6 +8,10 @@ This project formalizes an intraday setup: a recent price and volume spike, cons
 
 **Research status: the studied intraday variants did not justify live deployment.** The value of the project is the reproducible logic and the investigation, not a claim of profitable trading.
 
+![Archived comparison: mean net per-trade return is negative for V1, positive for V2 in 2021–2025, and negative for V2 in the 2026 study window](docs/images/research-comparison.png)
+
+*Original study summaries at 100 bps round-trip costs. V2 was selected after reviewing V1. These are historical per-trade results, not portfolio returns or a newly reproduced backtest. [Data and provenance](docs/figures/README.md).*
+
 ```text
 Market data → Causal setup rules → Entry / stop / exit simulation
                                          ↓
@@ -53,7 +57,13 @@ This downloads recent data, requires network access, and may produce no signals.
 
 The archived v1 study recorded **83 trades**, a **0.74 profit factor**, and **−0.78% average return per trade** at 100 bps round-trip costs. The revised v2 improved the earlier sample but weakened in 2026, and its bootstrap interval still included zero. The recorded decision was **no-go**.
 
-These are historical trade-level summaries, not newly reproduced portfolio returns. The public release excludes provider datasets, generated reports, and notebook output. Reproducing the historical numbers requires the original data snapshots or a documented replacement and the appropriate data access.
+These are historical trade-level summaries, not newly reproduced portfolio returns. The public release includes selected aggregate tables and their figures; provider datasets, full generated reports and notebook output remain excluded. Reproducing the historical numbers requires the original data snapshots or a documented replacement and the appropriate data access.
+
+![V2 mean net return decreases as round-trip costs rise from 24 to 200 basis points; the 2026 sample stays negative throughout](docs/images/cost-sensitivity.png)
+
+The earlier V2 sample turns negative at 200 bps. The archived 2026 sample is negative at every cost level shown. The `2026 YTD` label refers to the original study window, not a continuously updated result.
+
+Both charts can be [regenerated offline](docs/figures/README.md#regenerate-offline) from the bundled aggregate CSVs.
 
 Start with [the final research decision](VERDETTO_FINALE.md), [the frozen v1 specification](FROZEN_SPEC_V1.md), or [the archived research notes](RESEARCH_NOTES.md). The detailed research notes are in Italian.
 
